@@ -1,0 +1,21 @@
+обновление системы
+rpm-ostree upgrade
+
+установка кодеков
+rpm-ostree install gstreamer1-libav gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly chromium-libs-media-freeworld ffmpeg
+
+добавление репозитория флатхаб
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+добавление репозитория rpmfusion
+sudo rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+посмотреть список снимков состояния системы
+rpm-ostree status
+
+откат на предыдущее состояние
+rpm-ostree rollback
+
+закрепление снимка состояния системы
+sudo ostree admin pin 0
+
